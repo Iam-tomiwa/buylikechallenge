@@ -8,19 +8,19 @@ import ArrowBackIosNewOutlinedIcon from "@mui/icons-material/ArrowBackIosNewOutl
 import ArrowForwardIosOutlinedIcon from "@mui/icons-material/ArrowForwardIosOutlined";
 const services = [
   {
-    text: `At Surpaxx Technology, our innovated solutions are scalable and flexible enough that even small businesses can afford to use and reap the rewards of a diligent and efficient organization.`,
+    text: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto commodi qui voluptatibus sunt delectus! Qui delectus laborum labore, tempora velit voluptas aperiam a illum corporis, modi est consectetur veritatis.`,
     title: "Innovative Solutions",
   },
   {
-    text: `Our solution offering will help you identify the opportunities to deliver value and efficiency by identifying the processes within your business ecosystem of customers, employees, partners and suppliers that are yet to automate.`,
+    text: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto commodi qui voluptatibus sunt delectus! Qui delectus laborum labore, tempora velit voluptas aperiam a illum corporis, modi est consectetur veritatis.`,
     title: "Digital Transformation",
   },
   {
-    text: `Our Consultancy and staff augmentation service offering is a flexible outsourcing strategy that enables you to hire tech talent globally and manage your augmented team directly.`,
+    text: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto commodi qui voluptatibus sunt delectus! Qui delectus laborum labore, tempora velit voluptas aperiam a illum corporis, modi est consectetur veritatis.`,
     title: "Consultancy & Staff Augmentation",
   },
   {
-    text: `With expertise in multiple technologies and domains, we develop smart enterprise applications that enable your organization to streamline processes, reduce cost, increase business value and accelerate your time to market.`,
+    text: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto commodi qui voluptatibus sunt delectus! Qui delectus laborum labore, tempora velit voluptas aperiam a illum corporis, modi est consectetur veritatis.`,
     title: "Enterprise Development",
   },
 ];
