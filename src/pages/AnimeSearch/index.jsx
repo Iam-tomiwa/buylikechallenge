@@ -30,9 +30,20 @@ const AnimeSearch = () => {
         setItems(prevItems => [...prevItems, ...data.results]);
         setHasMore(page < data.last_page);
         setIsFetching(false);
-      } catch (err) {
-        console.log(err);
-        setError(err);
+      } catch (error) {
+        console.log(error);
+        if (error.response) {
+          // The request was made and the server responded with a status code that falls out of the range of 2xx
+          setError(error.response.data.message);
+        } else if (error.request) {
+          // The request was made but no response was received
+          console.log(error.request);
+          setError(error.response.data.message);
+        } else {
+          // Something happened in setting up the request that triggered an Error
+          setError(error.message);
+          console.log("Error", error.message);
+        }
       }
     }
   }, [page, searchTerm]);
@@ -59,6 +70,7 @@ const AnimeSearch = () => {
               placeholder="Search for an anime, e.g Naruto"
               id="search"
               className="filter-field"
+              disabled={isFetching}
             />
             <button
               disabled={isFetching}
