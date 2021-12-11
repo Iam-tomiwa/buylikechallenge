@@ -1,0 +1,216 @@
+.input-icon-wrap {
+  background: var(--inputBg);
+  width: 100%;
+  border-radius: 3px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  position: relative;
+
+  &.icon-placeholder {
+    input {
+      padding-left: 45px;
+    }
+  }
+  .icon {
+    background: transparent;
+    position: absolute;
+    top: 0;
+    padding: 0 0.8rem;
+    bottom: 0;
+    border: none;
+    font-size: 12px;
+    background-color: inherit;
+    z-index: 2;
+    height: 90%;
+    margin: 0.1rem;
+    svg {
+      width: 14px;
+      height: 14px;
+    }
+    color: var(--textClr);
+    &.icon-left {
+      pointer-events: none;
+      cursor: text;
+      left: 0;
+      border-right: 1px solid var(--inputBorder);
+    }
+    &.icon-right {
+      right: 0;
+      cursor: pointer;
+    }
+  }
+  &.select-wrap {
+    .icon {
+      cursor: auto;
+      color: var(--primary);
+      pointer-events: none;
+      padding: 0 0.1rem;
+
+      svg {
+        fill: var(--primary);
+        width: 18px;
+        height: 18px;
+      }
+    }
+    select {
+      padding-right: 1.3rem !important;
+      cursor: pointer;
+    }
+  }
+  input,
+  select {
+    height: 100% !important;
+  }
+}
+
+// create a div with classname of form-group-wra to arrange input in 2's
+.form-group-wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+
+  .form-group {
+    width: 48%;
+  }
+}
+.form-group {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 10px 0;
+  width: 100%;
+
+  label {
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 14px;
+    color: var(--textClr) !important;
+    margin-bottom: 5px;
+  }
+
+  &.half-width {
+    width: 48%;
+  }
+}
+
+/*custom select arrow*/
+select::-ms-expand {
+  display: none;
+}
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+input:not([type="checkbox"]),
+select,
+textarea,
+.select-mui {
+  background: transparent;
+  width: 100%;
+  height: 40px;
+  overflow-y: hidden;
+  padding: 0 1rem;
+  border-radius: 3px;
+  font-size: 12px;
+  flex-grow: 2;
+  line-height: 14px;
+  color: var(--textClr);
+  border: 1px solid var(--inputBorder);
+
+  &:focus {
+    border: 1px solid var(--primary);
+    outline: none;
+  }
+}
+
+// material ui select
+.select-mui {
+  padding: 0;
+
+  font-size: 12px !important;
+  svg {
+    fill: var(--primary);
+  }
+  &,
+  input {
+    border: none !important;
+  }
+  fieldset {
+    border-width: 1px !important;
+    border-color: var(--inputBorder);
+    &:focus {
+      border-color: var(--primary) !important;
+    }
+  }
+}
+.menu-item {
+  font-size: 12px !important;
+
+  &:hover,
+  &.Mui-selected {
+    background-color: var(--primary) !important;
+    color: var(--whiteClr) !important;
+  }
+}
+
+.form-group textarea {
+  height: 130px !important;
+  border: 1px solid var(--inputBorder);
+  padding: 0.5rem;
+  resize: vertical;
+}
+
+// .is-invalid {
+//   border-color: #ff0606 !important;
+//   .icon {
+//     path {
+//       fill: #ff0606;
+//     }
+//   }
+// }
+
+.input-err-msg {
+  color: #ff0606;
+  width: 100%;
+  font-weight: 500;
+  font-size: 8.51965px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-top: 10px;
+  text-align: right;
+}
+
+.commentInput {
+  margin-bottom: 0;
+  input,
+  .input-icon-wrap {
+    background: transparent;
+    background-color: transparent;
+    border: 0;
+    border-radius: 0;
+    &:focus {
+      background: transparent;
+    }
+  }
+  .input-icon-wrap {
+    border-top: 1px solid rgba($color: #000000, $alpha: 0.06);
+
+    svg path {
+      fill: rgba($color: #000000, $alpha: 0.6);
+    }
+  }
+}
+
+// phone style
+.react-tel-input {
+  height: 100%;
+}
+.react-tel-input .selected-flag {
+  height: 40px;
+}

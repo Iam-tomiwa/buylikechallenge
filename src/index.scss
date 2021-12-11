@@ -1,0 +1,147 @@
+@use "./assets/styleUtils/colors";
+@use "./assets/styleUtils/layout";
+@use "./assets/styleUtils/" as *;
+html {
+  scroll-behavior: smooth;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+a {
+  text-decoration: none;
+  display: inline-block;
+  color: inherit;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: bold;
+}
+
+ul {
+  list-style-type: none;
+}
+::placeholder {
+  color: var(--placeholder);
+}
+
+body {
+  background-color: var(--bg-color);
+  font-size: 14px;
+  h1,
+  h2,
+  h3,
+  p,
+  h4,
+  h5,
+  h6,
+  svg,
+  a,
+  input {
+    color: var(--textClr);
+  }
+}
+.btn-wrap {
+  @include flex($justify: flex-end);
+  button:first-child {
+    margin-right: 1rem;
+  }
+}
+.btn {
+  @include button;
+}
+.btn-small {
+  @include button;
+  padding: 8px;
+  font-size: 12px;
+}
+.btn-icon-start {
+  font-size: 12px;
+  svg {
+    margin-right: 0.5rem;
+    max-width: 20px;
+    max-height: 18px;
+  }
+}
+.btn-icon-end {
+  font-size: 12px;
+  svg {
+    margin-left: 0.5rem;
+    max-width: 20px;
+    max-height: 18px;
+  }
+}
+.btn-primary {
+  @include button;
+  background: var(--primary);
+  color: white;
+  &:hover {
+    background-color: rgb(0, 57, 132);
+  }
+}
+.btn-sec {
+  @include button;
+  background: transparent;
+  border: 1px solid var(--primary);
+}
+.btn-small {
+  padding: 0.3rem !important;
+}
+.btn-accentBlue {
+  @include button;
+  background: var(--accentBlue);
+  color: var(--primary);
+  border: 1px solid var(--accentBlueBorder);
+}
+
+.btn-noBg {
+  @include button;
+  padding: 0.3rem;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: var(--primary);
+  &:hover,
+  &:focus {
+    box-shadow: none;
+  }
+}
+
+.slick-dots {
+  bottom: -40px !important;
+  li.slick-active {
+    button::before {
+      color: var(--primary) !important;
+      opacity: 1 !important;
+    }
+  }
+  li {
+    margin: 0 !important;
+    padding: 0.2rem 0.1rem !important;
+    &,
+    & * {
+      width: max-content !important;
+      height: max-content !important;
+    }
+    button {
+      padding: 3px;
+    }
+  }
+  li button {
+    &:hover {
+      box-shadow: none;
+    }
+    &::before {
+      color: #d3d2d2 !important;
+      font-size: 8px !important;
+      opacity: 0.5 !important;
+    }
+  }
+}

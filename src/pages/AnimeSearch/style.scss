@@ -1,0 +1,59 @@
+@use "../../assets/styleUtils/" as *;
+.anime-search-pg {
+  background-color: #1d75be;
+  min-height: 100vh;
+  .inner {
+    max-width: 600px;
+    padding: 3rem 0;
+  }
+  .search-form {
+    width: 100%;
+    background-color: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 8px;
+    height: fit-content;
+    @include flex($justify: flex-start);
+    position: sticky;
+    top: 0;
+    padding: 0 0.5rem;
+    font-size: 15px;
+    .filter-field {
+      margin: 0;
+    }
+    .input-icon-wrap {
+      padding: 0;
+      background-color: transparent;
+      height: 30px;
+      input {
+        font-size: 15px;
+        border: none;
+        padding: 0 0.5rem;
+        color: var(--whiteClr) !important;
+        &:focus {
+          border: none;
+        }
+      }
+    }
+
+    .btn-noBg {
+      // padding: 0;
+      height: 100%;
+      color: var(--whiteClr);
+      text-transform: capitalize;
+    }
+  }
+  p {
+    color: var(--whiteClr);
+    margin: 1rem 0;
+  }
+  .cards-wrap {
+    margin: 2rem 0;
+    // display: flex;
+    // gap: 1rem;
+    // flex-wrap: wrap;
+    // .anime-card{}
+  }
+  .btn.bg-whiteClr {
+    margin: 1rem auto;
+  }
+}
