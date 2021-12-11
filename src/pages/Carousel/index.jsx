@@ -6,6 +6,7 @@ import "./styles.scss";
 import MiscellaneousServicesOutlinedIcon from "@mui/icons-material/MiscellaneousServicesOutlined";
 import ArrowBackIosNewOutlinedIcon from "@mui/icons-material/ArrowBackIosNewOutlined";
 import ArrowForwardIosOutlinedIcon from "@mui/icons-material/ArrowForwardIosOutlined";
+
 const services = [
   {
     text: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto commodi qui voluptatibus sunt delectus! Qui delectus laborum labore, tempora velit voluptas aperiam a illum corporis, modi est consectetur veritatis.`,

@@ -90,6 +90,7 @@ const AnimeSearch = () => {
           </button>
         )}
         {error && <h4 className="clr-redClr">{error}</h4>}
+        <br />
       </div>
     </div>
   );
