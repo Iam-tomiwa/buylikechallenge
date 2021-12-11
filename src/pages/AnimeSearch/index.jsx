@@ -38,30 +38,34 @@ const AnimeSearch = () => {
 
   return (
     <div className="anime-search-pg">
-      <div className="inner">
-        <FormProvider {...methods}>
-          <form
-            className="search-form"
-            onSubmit={methods.handleSubmit(onSubmit)}
-          >
-            <InputField
-              type="search"
-              name="search"
-              placeholder="Search for an anime, e.g Naruto"
-              id="search"
-              className="filter-field"
-              disabled={isFetching}
-            />
-            <button
-              disabled={isFetching}
-              aria-label="search"
-              type="submit"
-              className="btn-noBg"
+      <div className="form-header">
+        <div className="inner">
+          <FormProvider {...methods}>
+            <form
+              className="search-form"
+              onSubmit={methods.handleSubmit(onSubmit)}
             >
-              Go
-            </button>
-          </form>
-        </FormProvider>
+              <InputField
+                type="search"
+                name="search"
+                placeholder="Search for an anime, e.g Naruto"
+                id="search"
+                className="filter-field"
+                disabled={isFetching}
+              />
+              <button
+                disabled={isFetching}
+                aria-label="search"
+                type="submit"
+                className="btn-noBg"
+              >
+                Go
+              </button>
+            </form>
+          </FormProvider>
+        </div>
+      </div>
+      <div className="inner">
         {items.length > 0 && (
           <>
             <p>Showing Search Results For: {searchTerm}</p>

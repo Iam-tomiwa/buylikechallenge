@@ -70,7 +70,7 @@ function App() {
       <ThemeProvider theme={theme}>
         <CssBaseline />
         <BrowserRouter>
-          <div style={{overflowX: "hidden"}} className="app layout">
+          <div className="app layout">
             <main>
               <Routes>
                 <Route path="/" element={<Hero />} />

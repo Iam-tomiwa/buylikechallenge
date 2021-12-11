@@ -16,7 +16,15 @@
   }
   .inner {
     max-width: 600px;
-    padding: 3rem 0;
+  }
+  .form-header {
+    background-color: #1d75be;
+    position: sticky;
+    top: 0;
+    .inner {
+      padding: 2rem 0;
+      padding-bottom: 1rem;
+    }
   }
   .search-form {
     width: 100%;
@@ -25,8 +33,7 @@
     border-radius: 8px;
     height: fit-content;
     @include flex($justify: flex-start);
-    position: sticky;
-    top: 0;
+
     padding: 0 0.5rem;
     font-size: 15px;
     .filter-field {
@@ -58,13 +65,7 @@
     color: var(--whiteClr);
     margin: 1rem 0;
   }
-  .cards-wrap {
-    margin: 2rem 0;
-    // display: flex;
-    // gap: 1rem;
-    // flex-wrap: wrap;
-    // .anime-card{}
-  }
+
   .btn.bg-whiteClr {
     margin: 1rem auto;
   }

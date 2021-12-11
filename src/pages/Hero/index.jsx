@@ -8,7 +8,7 @@ const Hero = () => {
 
   return (
     <>
-      <div style={{overflowX: "hidden"}} className="app">
+      <div className="app">
         <Nav />
         <main>
           <Box className={classes.hero}>
