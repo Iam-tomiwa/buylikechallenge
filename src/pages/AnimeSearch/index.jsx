@@ -30,6 +30,7 @@ const AnimeSearch = () => {
         setItems(prevItems => [...prevItems, ...data.results]);
         setHasMore(page < data.last_page);
         setIsFetching(false);
+        setError("");
       } catch (error) {
         console.log(error);
         if (error.response) {
@@ -44,6 +45,8 @@ const AnimeSearch = () => {
           setError(error.message);
           console.log("Error", error.message);
         }
+      } finally {
+        setIsFetching(false);
       }
     }
   }, [page, searchTerm]);
