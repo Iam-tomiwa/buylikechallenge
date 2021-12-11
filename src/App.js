@@ -6,7 +6,7 @@ import Hero from "./pages/Hero";
 import AnimeSearch from "./pages/AnimeSearch";
 import store from "./store/store";
 import {Provider} from "react-redux";
-import Carousel from "./components/Carousel";
+import Carousel from "./pages/Carousel";
 const theme = createTheme({
   palette: {
     secondary: {
