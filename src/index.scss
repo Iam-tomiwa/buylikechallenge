@@ -35,18 +35,6 @@ ul {
 body {
   background-color: var(--bg-color);
   font-size: 14px;
-  h1,
-  h2,
-  h3,
-  p,
-  h4,
-  h5,
-  h6,
-  svg,
-  a,
-  input {
-    color: var(--textClr);
-  }
 }
 .btn-wrap {
   @include flex($justify: flex-end);

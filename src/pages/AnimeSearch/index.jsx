@@ -4,60 +4,37 @@ import {useState, useEffect, useCallback} from "react";
 import "./style.scss";
 import AnimeCard from "../../components/AnimeCard";
 import {Grid} from "@mui/material";
-import axios from "axios";
+import {useSelector, useDispatch} from "react-redux";
+import {fetchAnime, clearAnimeList} from "../../store/AnimeList/animeActions";
 
 const AnimeSearch = () => {
   const methods = useForm();
-  const [items, setItems] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
-  const [error, setError] = useState("");
-  const [isFetching, setIsFetching] = useState(false);
   const [page, setPage] = useState(1);
-  const [hasMore, setHasMore] = useState(true);
+
+  const items = useSelector(state => state.data);
+  const error = useSelector(state => state.error);
+  const isFetching = useSelector(state => state.loading);
+  const totalPages = useSelector(state => state.totalPages);
+  const dispatch = useDispatch();
 
   const onSubmit = data => {
     setSearchTerm(data.search);
+    dispatch(clearAnimeList());
   };
 
-  const loadMoreItems = useCallback(async () => {
+  const loadAnime = useCallback(() => {
     if (!!searchTerm.trim()) {
-      try {
-        setIsFetching(true);
-        const {data} = await axios.get(
-          `https://api.jikan.moe/v3/search/anime?q=${searchTerm}&page=${page}&limit=8`
-        );
-        console.log(data);
-        setItems(prevItems => [...prevItems, ...data.results]);
-        setHasMore(page < data.last_page);
-        setIsFetching(false);
-        setError("");
-      } catch (error) {
-        console.log(error);
-        if (error.response) {
-          // The request was made and the server responded with a status code that falls out of the range of 2xx
-          setError(error.response.data.message);
-        } else if (error.request) {
-          // The request was made but no response was received
-          console.log(error.request);
-          setError(error.response.data.message);
-        } else {
-          // Something happened in setting up the request that triggered an Error
-          setError(error.message);
-          console.log("Error", error.message);
-        }
-      } finally {
-        setIsFetching(false);
-      }
+      dispatch(fetchAnime(searchTerm, page));
     }
-  }, [page, searchTerm]);
+  }, [dispatch, page, searchTerm]);
 
   useEffect(() => {
     const abortCont = new AbortController();
-    loadMoreItems();
-
+    loadAnime();
     // abort the fetch
     return () => abortCont.abort();
-  }, [loadMoreItems]);
+  }, [loadAnime]);
 
   return (
     <div className="anime-search-pg">
@@ -89,8 +66,8 @@ const AnimeSearch = () => {
           <>
             <p>Showing Search Results For: {searchTerm}</p>
             <Grid container spacing={3}>
-              {items.map(item => (
-                <Grid item key={item.mal_id} xs={6} sm={4} md={3} lg={3}>
+              {items.map((item, i) => (
+                <Grid item key={item.mal_id + i} xs={6} sm={4} md={3} lg={3}>
                   <AnimeCard item={item} />
                 </Grid>
               ))}
@@ -100,7 +77,7 @@ const AnimeSearch = () => {
         <br />
         {isFetching && <p className="clr-whiteClr">Fetching items...</p>}
         <br />
-        {!isFetching && items.length > 0 && hasMore && (
+        {!isFetching && items.length > 0 && page < totalPages && (
           <button
             className="btn bg-whiteClr"
             onClick={() => setPage(prevPageNumber => prevPageNumber + 1)}
@@ -108,7 +85,7 @@ const AnimeSearch = () => {
             Load more
           </button>
         )}
-        {error && <h4>{error}</h4>}
+        {error && <h4 className="clr-redClr">{error}</h4>}
       </div>
     </div>
   );

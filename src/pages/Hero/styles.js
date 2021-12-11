@@ -1,6 +1,7 @@
 import {makeStyles} from "@mui/styles";
 const useStyles = makeStyles(theme => ({
   hero: {
+    overflow: "hidden",
     margin: "auto",
     padding: theme.spacing(1),
     width: "95% !important",
@@ -13,7 +14,6 @@ const useStyles = makeStyles(theme => ({
   },
   right: {
     // width: "100%",
-
     "& img": {
       width: "100%",
       maxHeight: 550,

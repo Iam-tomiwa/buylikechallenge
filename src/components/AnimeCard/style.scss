@@ -21,7 +21,7 @@
   }
   .card-body {
     padding: 0.5rem;
-    // @include flex($justify: flex-start);
     flex-grow: 2;
+    font-size: 0.9rem;
   }
 }

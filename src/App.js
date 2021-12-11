@@ -4,7 +4,9 @@ import PlusJakarta from "./assets/font/PlusJakartaDisplay-Bold.otf";
 import {CssBaseline} from "@mui/material";
 import Hero from "./pages/Hero";
 import AnimeSearch from "./pages/AnimeSearch";
-
+import store from "./store/store";
+import {Provider} from "react-redux";
+import Carousel from "./components/Carousel";
 const theme = createTheme({
   palette: {
     secondary: {
@@ -64,19 +66,22 @@ const theme = createTheme({
 
 function App() {
   return (
-    <ThemeProvider theme={theme}>
-      <CssBaseline />
-      <BrowserRouter>
-        <div style={{overflowX: "hidden"}} className="app layout">
-          <main>
-            <Routes>
-              <Route path="/" element={<Hero />} />
-              <Route path="/anime" element={<AnimeSearch />} />
-            </Routes>
-          </main>
-        </div>
-      </BrowserRouter>
-    </ThemeProvider>
+    <Provider store={store}>
+      <ThemeProvider theme={theme}>
+        <CssBaseline />
+        <BrowserRouter>
+          <div style={{overflowX: "hidden"}} className="app layout">
+            <main>
+              <Routes>
+                <Route path="/" element={<Hero />} />
+                <Route path="/anime" element={<AnimeSearch />} />
+                <Route path="/carousel" element={<Carousel />} />
+              </Routes>
+            </main>
+          </div>
+        </BrowserRouter>
+      </ThemeProvider>
+    </Provider>
   );
 }
 

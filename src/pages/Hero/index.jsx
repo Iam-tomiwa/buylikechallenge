@@ -31,7 +31,12 @@ const Hero = () => {
                 justifyContent={{xs: "center", md: "space-between"}}
                 alignItems="center"
               >
-                <Grid item xs={12} md={5}>
+                <Grid
+                  className="animate__animated animate__fadeInUp"
+                  item
+                  xs={12}
+                  md={5}
+                >
                   <Typography color="white" variant="h1" gutterBottom>
                     Lorem ipsum <span className={classes.clrSec}>dolor</span>{" "}
                     sit amet consectetur.
@@ -43,7 +48,12 @@ const Hero = () => {
                     Shop Now
                   </Button>
                 </Grid>
-                <Grid item xs={12} md={7} className={classes.right}>
+                <Grid
+                  className={`animate__animated  animate__fadeInUp animate__delay-1s ${classes.right}`}
+                  item
+                  xs={12}
+                  md={7}
+                >
                   <img src={heroGif} alt="Shop" />
                 </Grid>
               </Grid>

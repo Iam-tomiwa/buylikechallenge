@@ -1,11 +1,7 @@
 :root {
-  --primary: #0052bd;
+  --primary: #0f3460;
   --bg-color: #f3f2f1;
-  --yellowClr: #edb300;
-  --bgYellow: #ffa500;
-  --greenClr: #00ab06;
-  --greenSec: #42be65;
-  --accentBlue: #f0f3fb;
+  --secondary: #d24158;
   --whiteClr: #fff;
   --placeholder: #dcdff1;
   --inputBorder: #dcdff1;
@@ -16,7 +12,8 @@
   --textClr: #404040;
   --textFaint: #6e768c;
   --blackClr: #000000;
-  --blackLight: #222222;
+  --animate-duration: 1.2s;
+  --animate-delay: 0.5s;
 }
 
 // scss hash maps to generate helper classes
@@ -27,8 +24,7 @@ $colors: (
   placeholder: var(--placeholder),
   inputBorder: var(--inputBorder),
   inputBg: var(--inputBg),
-  greenClr: var(--greenClr),
-  yellowClr: var(--yellowClr),
+  secondary: var(--secondary),
   bgYellow: var(--bgYellow),
   greyClr: var(--greyClr),
   accentBlue: var(--accentBlue),

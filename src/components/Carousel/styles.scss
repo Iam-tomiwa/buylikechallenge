@@ -1,0 +1,111 @@
+@use "../../assets/styleUtils/" as *;
+.dbl-border-box {
+  border: 2px solid var(--secondary);
+  position: relative;
+  &::after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    border: 2px solid var(--secondary);
+    top: -10px;
+    left: -10px;
+  }
+}
+.slider-pg {
+  @include flex();
+  height: 100vh;
+  .title {
+    margin: 2rem auto;
+    width: fit-content;
+    text-align: center;
+    position: relative;
+    &::before {
+      content: "";
+      width: 100%;
+      height: 3px;
+      background-color: var(--secondary);
+      position: absolute;
+      left: 1.7rem;
+      top: 100%;
+    }
+  }
+}
+.slick-dots {
+  bottom: -30px !important;
+  li.slick-active {
+    button::before {
+      color: var(--secondary) !important;
+      opacity: 1 !important;
+    }
+  }
+  li {
+    margin: 0 !important;
+
+    padding: 0.2rem 0.1rem !important;
+    &,
+    & * {
+      width: max-content !important;
+      height: max-content !important;
+    }
+    button {
+      padding: 3px;
+    }
+  }
+  li button {
+    &:hover {
+      box-shadow: none;
+    }
+    &::before {
+      font-size: 8px !important;
+      opacity: 0.5 !important;
+    }
+  }
+}
+.slick-arrow {
+  width: 40px;
+  height: 40px;
+  color: var(--primary) !important;
+  display: flex !important;
+  @include flex();
+  &.slick-prev {
+    left: -35px;
+  }
+  span {
+    color: var(--primary) !important;
+  }
+}
+.slide-list {
+  min-height: 300px !important;
+}
+.slick-slide > div {
+  margin-top: 10px;
+}
+.services__card {
+  margin: 0 5%;
+  min-height: 280px;
+  width: 90% !important;
+  @include flex();
+  display: inline-flex !important;
+  padding: 1rem 0.5rem;
+  position: relative;
+  @include mq(mobile) {
+    width: 95% !important;
+  }
+  h4 {
+    text-transform: uppercase;
+    &::first-letter {
+      font-size: 1.2em;
+    }
+  }
+
+  header {
+    @include flex($justify: flex-start);
+    margin-bottom: 1rem;
+    svg {
+      width: 59px;
+      height: 59px;
+      margin-right: 1rem;
+    }
+  }
+}

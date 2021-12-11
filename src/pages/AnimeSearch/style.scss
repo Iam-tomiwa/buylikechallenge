@@ -2,6 +2,18 @@
 .anime-search-pg {
   background-color: #1d75be;
   min-height: 100vh;
+  h1,
+  h2,
+  h3,
+  p,
+  h4,
+  h5,
+  h6,
+  svg,
+  a,
+  input {
+    color: var(--textClr);
+  }
   .inner {
     max-width: 600px;
     padding: 3rem 0;
