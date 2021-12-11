@@ -11,7 +11,7 @@ const useStyles = makeStyles(theme => ({
     listStyle: "none",
     display: "flex",
     position: "absolute",
-    top: "100%",
+    top: "110%",
     left: 0,
     borderRadius: 10,
     width: "100%",
@@ -20,6 +20,7 @@ const useStyles = makeStyles(theme => ({
     clipPath: "inset(0 0 100% 0)",
     transition: "0.5s clip-path ease",
     padding: 0,
+    zIndex: 10,
     background: theme.palette.common.white,
     [theme.breakpoints.up("sm")]: {
       background: "transparent",
